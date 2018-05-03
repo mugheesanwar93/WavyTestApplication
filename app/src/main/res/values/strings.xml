@@ -7,4 +7,5 @@
     <string name="email">Email</string>
     <string name="no_internet">Please connect to the Internet</string>
     <string name="loading">Loading…</string>
+    <string name="deleted_successfully">User Phone No Deleted Successfully</string>
 </resources>

@@ -2,7 +2,6 @@ package com.wavy_app.wavytestapplication.ui;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.ContentLoadingProgressBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -108,6 +107,7 @@ public class UserProfileActivity extends AppCompatActivity implements View.OnCli
                         AppUtil.showToast(UserProfileActivity.this, getString(R.string.no_internet));
                         break;
                     case Constants.WebApi.Response.SUCCESS:
+                        AppUtil.showToast(getApplicationContext(), getString(R.string.deleted_successfully));
                         removeValues();
                         break;
                     case Constants.WebApi.Response.TIMEOUT:
@@ -144,12 +144,7 @@ public class UserProfileActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void removeValues() {
-        tvEmail.setText("");
-        tvFirstName.setText("");
-        tvLastName.setText("");
         tvPhoneNo.setText("");
-
-        civDisplayPicture.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.photo));
     }
 
     public void showProgress() {
